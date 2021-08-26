@@ -1,0 +1,27 @@
+p {
+  /*
+    named: red, orange, blue
+    hexa: #ffda3e,
+    #ffa400,
+    #0000ff, 
+    rgb: rgb(0, 0, 0),
+    rgb(255, 255, 255);
+    rgba(): rgba(0, 0, 0, 0.5);
+    alpha: opacity 0 -> 1
+    ;
+  */
+  color: red;
+  color: #ffa400;
+  color: rgb(214, 26, 31);
+  color: rgba(91, 13, 223, 0.6);
+}
+
+.background {
+  background-color: #ffa400;
+  width: 300px;
+  height: 200px;
+  /* max-width: 50%; */
+  /* overflow: hidden */
+  /* Xuất hiện thanh scroll dọc */
+  overflow-y: auto;
+}
