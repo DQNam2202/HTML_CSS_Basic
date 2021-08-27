@@ -1,3 +1,16 @@
+html {
+  font-size: 62.5%;
+  /* 
+    Đưa về cơ số 10
+    100 % -> 16px
+    ? % <- 10px
+  */
+}
+
+* {
+  box-sizing: border-box;
+}
+
 p {
   /*
     named: red, orange, blue
@@ -18,10 +31,138 @@ p {
 
 .background {
   background-color: #ffa400;
-  width: 300px;
+  width: 600px;
   height: 200px;
   /* max-width: 50%; */
   /* overflow: hidden */
   /* Xuất hiện thanh scroll dọc */
-  overflow-y: auto;
+  /* overflow-y: auto; */
+  /* overflow-x: scroll; */
+}
+
+.background2 {
+  background-image: url("https://images.unsplash.com/photo-1622901526092-dda32e72566c?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80");
+  width: 100vw;
+  height: 100vh;
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  /* background-attachment: fixed; */
+  object-fit: cover;
+}
+
+.box1 {
+  width: 10em;
+  height: 10em;
+  background-color: #FF6651;
+  font-size: 32px;
+  /* 1em = 32px */
+  /* em phụ thuộc vào thuộc tính font-size của chính nó hoặc phần tử chứa nó */
+}
+
+.box2 {
+  font-size: 32px;
+  width: 10rem;
+  height: 10rem;
+  background-color: #3D6EF7;
+  border: 1px solid #000;
+  /* rem là đơn vị chỉ phụ thuộc vào thuộc tính font-size của thẻm html */
+}
+
+.margin {
+  width: 14rem;
+  height: 14rem;
+  background-color: #FF6651;
+  margin: 20px 0px 30px;
+  /* 
+    => center
+    margin-left: auto;
+    margin-right: auto; 
+  */
+  /* margin: top = right = bottom = left */
+  /* margin: 10px; */
+  /* margin: top = bottom / right = left */
+  /* margin: 10px 20px */
+  /* margin: top / right = left / bottom */
+  /* margin: 20px 40px 20px */
+  /* margin: top / right / bottom / left */
+  /* margin: 10px 20px 30px 40px */
+}
+
+.margin2 {
+  margin-top: 20px;
+  /* margin collapse lấy giá trị margin lớn hơn */
+}
+
+.padding {
+  width: 16rem;
+  height: 16rem;
+  background-color: #3D6EF7;
+  color: white;
+  margin: 30px;
+  padding: 10px;
+  /* padding: top = right = bottom = left */
+  /* padding: 10px; */
+  /* padding: top = bottom / right = left */
+  /* padding: 10px 20px */
+  /* padding: top / right = left / bottom */
+  /* padding: 20px 40px 20px */
+  /* padding: top / right / bottom / left */
+  /* padding: 10px 20px 30px 40px */
+}
+
+.marginNev {
+  width: 15rem;
+  height: 15rem;
+  background-color: #FF6651;
+  color: white;
+  padding: 10px;
+  margin: 30px;
+  margin-top: -60px;
+}
+
+.box {
+  width: 15rem;
+  height: 15rem;
+  margin: 30px;
+  background: #FF6651;
+  color: white;
+  padding: 10px;
+  border: 5px solid #000;
+  /* 
+  box-sizing: content-box
+    width = width + padding-left + padding-right + border-right + border-left;
+          = 100px + 10px + 10px + 5px + 5px = 130px
+    height = height + padding-top + padding-bottom + border-top + border-bottom;
+          = 100px + 10px + 10px + 5px + 5px = 130px
+  */
+  /* 
+  box-sizing: border-box;
+    width = width - padding-left - padding-right - border-right - border-left;
+          = 100px - 10px - 10px - 5px - 5px = 70px
+    height = height - padding-top - padding-bottom - border-top - border-bottom;
+          = 100px - 10px - 10px - 5px - 5px = 70px
+  */
+}
+
+a {
+  width: 10rem;
+  height: 10rem;
+  padding: 10px;
+  margin: 30px;
+  color: #fff;
+  border: 2px solid #000;
+  background-color: #ffa400;
+  display: inline-block;
+  /* 
+  => Ân nguyên thẻ nó đi
+  display: none; */
+}
+
+.font {
+  font-family: 'Poppins',
+    sans-serif;
+  font-weight: 300;
+  font-size: 1.6rem;
+  font-style: italic;
 }
