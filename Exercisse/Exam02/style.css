@@ -1,0 +1,118 @@
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+input,
+textarea,
+select,
+button {
+  outline: none;
+}
+
+input {
+  line-height: normal;
+}
+
+label,
+button {
+  cursor: pointer;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+.box {
+  width: 20rem;
+  height: 30rem;
+  background-color: #ffa400;
+  color: #000;
+  border: yellow;
+  border: 0.4rem solid yellow;
+  padding: 1rem;
+  margin: 1.5rem;
+  border-radius: 0.4rem;
+  text-align: center;
+}
+
+.question2 {
+  max-width: 50rem;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  word-break: break-word;
+}
+
+.question3 {
+  max-width: 10rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.wrapper {
+  width: 100vw;
+  height: 100vh;
+  background-image: url('https://source.unsplash.com/random');
+  background-position: center right;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.images {
+  width: 40rem;
+  height: 40rem;
+  border-radius: 50%;
+}
+
+/* .font {
+  font-family: 'Roboto',
+    sans-serif;
+  font-weight: 400;
+  font-weight: 600;
+} */
+
+.button {
+  margin-top: 5rem;
+}
+
+.link {
+  padding: 1rem 5rem;
+  color: white;
+  background-color: #5a4eb6;
+  font-size: 2rem;
+  text-decoration: none;
+  margin-left: 2rem;
+}
+
+.link:hover {
+  background-color: #ffa400;
+  color: #fff;
+}
+
+.link--rounded {
+  border-radius: 4px;
+}
+
+.link--round {
+  border-radius: 2rem;
+}

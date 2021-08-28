@@ -11,6 +11,18 @@ html {
   box-sizing: border-box;
 }
 
+body {
+  font-family: 'Poppins',
+    sans-serif;
+  font-weight: 300;
+  font-size: 1.6rem;
+  font-style: italic;
+}
+
+img {
+  max-width: 100%;
+}
+
 p {
   /*
     named: red, orange, blue
@@ -159,10 +171,72 @@ a {
   display: none; */
 }
 
+
 .font {
-  font-family: 'Poppins',
-    sans-serif;
-  font-weight: 300;
+
   font-size: 1.6rem;
-  font-style: italic;
+  color: #000;
+  font-weight: normal;
+  line-height: inherit;
+  max-width: 300px;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  word-break: break-word;
+  /*
+    strucate trên 1 dòng
+    white-space: nowrap;
+    max-width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis; 
+  */
+
+  /*
+    struncate theo số dòng mà khách hàng muôn
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    word-break: break-word; 
+  */
+}
+
+.images {
+  width: 30rem;
+  height: 30rem;
+  object-fit: cover;
+  display: block;
+  margin: 0 auto;
+  border-radius: 50%;
+}
+
+.wrapper {
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.image2 {
+  width: 30rem;
+  height: 30rem;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+/* 
+.pesudo1:hover {
+  color: #3D6EF7;
+  cursor: pointer;
+} */
+
+/* .pesudo1:active {
+  color: orangered;
+  cursor: pointer;
+} */
+
+.pesudo1:visited {
+  color: #20E3B2;
+  cursor: pointer;
 }
