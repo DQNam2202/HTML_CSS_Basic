@@ -58,18 +58,37 @@ img {
   font-size: 7.2rem;
   font-weight: normal;
   display: inline-block;
-  color: transparent;
-  background-clip: text;
-  -webkit-background-clip: text;
-  background-image: linear-gradient(90deg, rgba(131, 58, 180, 1) 0%, rgba(253, 29, 29, 1) 50%, rgba(252, 176, 69, 1) 100%);
+  /* Khi trình duyệt không hỗ trợ thuộc tính  -webkit-background-clip: text;*/
+  /* color: #3D6EF7; */
 }
+
+
+/* Khi trình duyệt hỗ trợ thuộc tính thì ta sử dụng @support */
+@supports (-webkit-background-clip: text) {
+  .title {
+    color: transparent;
+    background-clip: text;
+    -webkit-background-clip: text;
+    background-image: linear-gradient(90deg, rgba(131, 58, 180, 1) 0%, rgba(253, 29, 29, 1) 50%, rgba(252, 176, 69, 1) 100%);
+  }
+}
+
+/* Khi trình duyệt không hỗ trợ thì thêm @support not và thay đổi thuộc tính mà mình muốn lại ở trên className gốc*/
+/* @supports not (-webkit-background-clip: text) {
+  .title {
+    color: transparent;
+    background-clip: text;
+    -webkit-background-clip: text;
+    background-image: linear-gradient(90deg, rgba(131, 58, 180, 1) 0%, rgba(253, 29, 29, 1) 50%, rgba(252, 176, 69, 1) 100%);
+  }
+} */
 
 /* Hiển thị 2 hình nèn vởi linear-gradient */
 .background {
   width: 100vw;
   height: 100vh;
   background-image: linear-gradient(to right, rgba(33, 147, 176, 0.5), rgba(109, 213, 237, 0.63)),
-    url("https://images.unsplash.com/photo-1519323751229-d99671f70424?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80");
+    url("./images/poster_1.jpg");
   background-position: center center;
   background-repeat: no-repeat;
   object-fit: cover;
