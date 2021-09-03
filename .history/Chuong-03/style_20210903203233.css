@@ -1,21 +1,11 @@
 :root {
-  --primary-color: #3D6EF7;
-  --secondary-color: #6c757d;
-  --purple: #6f42c1;
-  --blue: #3881c5;
-  --white: #fff;
-  --orange: #FF6651;
-  --red: #dc3545;
-  --pink: #e83e8c;
-  --teal: #28c997;
-  --yellow: #ffc107;
-  --green: #28a745;
-  --success: #28a745;
-  --info: #17a2b8;
-  --wraning: #ffc107;
-  --danger: #dc3545;
-  --dark: #343a40;
-  --light: #f8f9fa;
+  --primary-color: #FF6651;
+  --secondary-color: #3D6EF7;
+  -c-pink: #F62682;
+  -c-green: #20E3B2;
+  -c-gray-1: #eee;
+  -c-gray-2: #ccc;
+  -c-gray-3: #555;
 }
 
 html {
@@ -135,7 +125,7 @@ img {
   width: 20rem;
   height: 20rem;
   margin: 5rem auto;
-  background-color: var(--pink);
+  background-color: var(-c-pink);
   border-radius: 0.5rem;
   box-shadow: rgba(240, 46, 170, 0.4) -5px 5px,
     rgba(240, 46, 170, 0.3) -10px 10px,

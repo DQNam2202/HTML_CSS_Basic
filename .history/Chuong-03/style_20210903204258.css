@@ -135,7 +135,7 @@ img {
   width: 20rem;
   height: 20rem;
   margin: 5rem auto;
-  background-color: var(--pink);
+  background-color: var(--c-pink);
   border-radius: 0.5rem;
   box-shadow: rgba(240, 46, 170, 0.4) -5px 5px,
     rgba(240, 46, 170, 0.3) -10px 10px,

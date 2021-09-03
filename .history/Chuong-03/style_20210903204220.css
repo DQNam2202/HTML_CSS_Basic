@@ -2,8 +2,7 @@
   --primary-color: #3D6EF7;
   --secondary-color: #6c757d;
   --purple: #6f42c1;
-  --blue: #3881c5;
-  --white: #fff;
+  --blue: #2881c5 --white: #fff;
   --orange: #FF6651;
   --red: #dc3545;
   --pink: #e83e8c;
@@ -135,7 +134,7 @@ img {
   width: 20rem;
   height: 20rem;
   margin: 5rem auto;
-  background-color: var(--pink);
+  background-color: var(--c-pink);
   border-radius: 0.5rem;
   box-shadow: rgba(240, 46, 170, 0.4) -5px 5px,
     rgba(240, 46, 170, 0.3) -10px 10px,
