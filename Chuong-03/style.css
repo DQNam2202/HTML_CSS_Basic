@@ -16,6 +16,7 @@
   --danger: #dc3545;
   --dark: #343a40;
   --light: #f8f9fa;
+  --greenyellow: #ADFF2F;
 }
 
 html {
@@ -167,3 +168,135 @@ img {
     -7px 8px #808d93,
     -8px 7px #cdd2d5;
 }
+
+/* Độ ưu tiên là tags < class vs attribute < id < inline < !importants */
+
+#name {
+  color: var(--dark)
+}
+
+.name {
+  font-size: 5rem;
+  color: var(--primary-color);
+  font-weight: bold;
+  line-height: inherit;
+}
+
+/* Trường hợp này h2#name sẽ được ưu tiên cao hơn dù cho có trùng Id những css sẽ duyệt code từ dưới lên trên
+
+h2#name{
+  color: var(--danger);
+}
+
+*/
+
+h2 {
+  color: var(--danger);
+}
+
+/* Cách tính độ ưu tiên theo vscode
+  CSS sẽ ưu tiên code từ dưới lên trên
+  Khi bạn rê chuột vào chỗ cần xét độ ưu tiên
+  => (x,y,z) | ( id, class vs attribute, tags)
+  Example:
+  + h2 (0,0,1)
+  + .name(0,1,0)
+  + #name(1,0,0)
+  0 0 1
+  0 1 0
+  1 0 0 
+  1 sẽ độ ưu tiên cao hơn 0
+*/
+
+
+/* li {
+  font-size: 5rem;
+  color: var(--dark);
+  font-weight: bold;
+} */
+
+/* Lấy item ở vị trí dầu */
+/* li:first-child {
+  color: var(--danger);
+} */
+
+/* Lấy item ở vị trí cuối */
+/* li:last-child {
+  color: var(--green)
+} */
+
+/* Lấy item ở vị trí thứ 2 */
+/* li:nth-child(2) {
+  color: var(--purple)
+} */
+
+/* Lấy item ở vị trí thứ 3 */
+/* li:nth-child(3) {
+  color: var(--info)
+} */
+
+/* Lấy item ở vị trí kế cuối */
+/* li:nth-last-child(2) {
+  color: var(--orange)
+} */
+
+/* Lấy tất cả trừ item ở vị trí đầu */
+/* li:not(:first-child) {
+  color: var(--green)
+} */
+
+/* Lấy tất cả trừ item ở vị trí cuối */
+/* li:not(:last-child) {
+  color: var(--danger)
+} */
+
+/* Lấy ra item ở vị trí chẵn */
+/* li:nth-child(odd) {
+  color: var(--greenyellow)
+} */
+
+/* Lấy ra item ở vị trí lẻ */
+/* li:nth-child(even) {
+  color: var(--secondary)
+} */
+
+/* Lấy ra item theo giá trị truyền vào */
+/* li:nth-child(2n+2) {
+  color: var(--pink)
+} */
+
+/* Type selector */
+/* li {
+  font-size: 5rem;
+  color: var(--dark);
+  font-weight: bold;
+}
+
+p {
+  font-size: 5rem;
+  color: var(--dark);
+  font-weight: bold;
+  line-height: inherit;
+} */
+
+
+/* li:nth-child(odd) span {
+  color: var(--greenyellow);
+} */
+
+/* p:not(:first-of-type) {
+  color: var(--yellow);
+}
+
+li:nth-of-type(odd) {
+  color: var(--danger);
+}
+
+
+li:nth-last-of-type(2) {
+  color: var(--greenyellow)
+}
+
+li:not(:last-of-type) {
+  color: var(--primary-color)
+} */
