@@ -71,28 +71,29 @@ img {
   width: 20rem;
   height: 20rem;
   background-image: linear-gradient(to left top, #3D6EF7, #FF6651);
-} */
+}
+*/
 
-.title {
+/* Khi trình duyệt không hỗ trợ thuộc tính  -webkit-background-clip: text;*/
+/* color: #3D6EF7; */
+/* .title {
   margin-top: 2rem;
   margin-left: 2rem;
   font-size: 7.2rem;
   font-weight: normal;
   display: inline-block;
-  /* Khi trình duyệt không hỗ trợ thuộc tính  -webkit-background-clip: text;*/
-  /* color: #3D6EF7; */
-}
+} */
 
 
 /* Khi trình duyệt hỗ trợ thuộc tính thì ta sử dụng @support */
-@supports (-webkit-background-clip: text) {
+/* @supports (-webkit-background-clip: text) {
   .title {
     color: transparent;
     background-clip: text;
     -webkit-background-clip: text;
     background-image: linear-gradient(90deg, rgba(131, 58, 180, 1) 0%, rgba(253, 29, 29, 1) 50%, rgba(252, 176, 69, 1) 100%);
   }
-}
+} */
 
 /* Khi trình duyệt không hỗ trợ thì thêm @support not và thay đổi thuộc tính mà mình muốn lại ở trên className gốc*/
 /* @supports not (-webkit-background-clip: text) {
@@ -105,7 +106,7 @@ img {
 } */
 
 /* Hiển thị 2 hình nèn vởi linear-gradient */
-.background {
+/* .background {
   width: 100vw;
   height: 100vh;
   background-image: linear-gradient(to right, rgba(33, 147, 176, 0.5), rgba(109, 213, 237, 0.63)),
@@ -114,7 +115,7 @@ img {
   background-repeat: no-repeat;
   object-fit: cover;
   background-size: cover;
-}
+} */
 
 /* Opacity:0, visibility: hidden, display:none */
 /* 
@@ -131,8 +132,10 @@ img {
   opacity: 0;
   visibility: hidden;
   display: none;
-} */
-.box-shadow {
+} 
+*/
+
+/* .box-shadow {
   width: 20rem;
   height: 20rem;
   margin: 5rem auto;
@@ -167,11 +170,11 @@ img {
     -7px 6px #cdd2d5,
     -7px 8px #808d93,
     -8px 7px #cdd2d5;
-}
+} */
 
 /* Độ ưu tiên là tags < class vs attribute < id < inline < !importants */
 
-#name {
+/* #name {
   color: var(--dark)
 }
 
@@ -180,7 +183,7 @@ img {
   color: var(--primary-color);
   font-weight: bold;
   line-height: inherit;
-}
+} */
 
 /* Trường hợp này h2#name sẽ được ưu tiên cao hơn dù cho có trùng Id những css sẽ duyệt code từ dưới lên trên
 
@@ -190,9 +193,6 @@ h2#name{
 
 */
 
-h2 {
-  color: var(--danger);
-}
 
 /* Cách tính độ ưu tiên theo vscode
   CSS sẽ ưu tiên code từ dưới lên trên
@@ -300,3 +300,96 @@ li:nth-last-of-type(2) {
 li:not(:last-of-type) {
   color: var(--primary-color)
 } */
+
+/* Combination trong CSS 
+  Dấu (+): dùng để liên kết 2 tags nằm cùng cấp và liền kề nhau
+  Dấu (~): Dùng để liên kết tags nằm cùng cấp với nhau nhưng không nhất thiết phải liền kề
+*/
+/* h2+.desc {
+  font-size: 5rem;
+  color: var(--danger);
+  font-weight: normal;
+  line-height: inherit;
+
+}
+
+h2~p {
+  color: var(--greenyellow);
+  font-size: 3rem;
+  font-weight: normal;
+  line-height: inherit;
+} */
+
+/* Css selector nâng cao*/
+
+/* 
+=> Style cho chữ cái đầu tiên: <tags>::first-letter
+=> Style cho mọi phần tử <a> có giá trị thuộc tính bắt đầu bằng "https": a[attribute ^= value]
+=> Style cho mọi phần tử <a> có giá trị thuộc tính kết thúc bằng ".pdf": a[attribute $= value]
+=> Style cho mọi phần tử có chứa ký tự www: a[attribute *= value]
+=> Style cho chính xác toàn bộ thẻ <div> có thuộc tính : [attribute = value]
+=> Style cho chữ đầu tiên của mọi phần tử <p>: ::first-letter
+=> Style cho dòng đầu tiên của mọi phần tử <p>: ::first-line
+=> 
+*/
+/* a {
+  font-size: 2rem;
+  display: block;
+  font-weight: normal;
+  line-height: inherit;
+}
+
+p {
+  font-size: 2rem;
+  font-weight: normal;
+  line-height: inherit;
+}
+
+a[href^="https"] {
+  color: var(--greenyellow);
+}
+
+a[href$=".pdf"] {
+  color: var(--wraning);
+}
+
+a[href*="www"] {
+  color: var(--danger)
+}
+
+div[data-title="value"] {
+  color: var(--blue);
+  font-size: 3rem;
+  font-weight: normal;
+  line-height: inherit;
+}
+
+p::first-letter {
+  color: var(--danger);
+  font-size: 4rem;
+}
+
+p::first-line {
+  color: #28c997;
+} */
+
+/* Transition: không áp dụng cho display: none và display: block */
+/* Nếu sử dụng thuộc tính display: none thì nên sử dụng 1 thẻ <div> bọc ở bên ngoài và trỏ tới box đó style =>  display: inline-block  */
+.boxed {
+  width: 10rem;
+  height: 10rem;
+  opacity: 0;
+  background-color: #17a2b8;
+  transition: all 0.2s ease-in-out;
+}
+
+.boxed:hover {
+  color: var(--yellow);
+  background-color: var(--danger);
+  width: 20rem;
+  height: 20rem;
+  opacity: 1;
+  font-size: 2rem;
+  font-weight: normal;
+  line-height: inherit;
+}
