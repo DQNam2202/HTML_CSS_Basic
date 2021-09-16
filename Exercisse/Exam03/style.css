@@ -1,0 +1,215 @@
+html {
+  box-sizing: border-box;
+  font-size: 62.5%
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+input,
+textarea,
+select,
+button {
+  outline: none;
+}
+
+input {
+  line-height: normal;
+}
+
+label,
+button {
+  cursor: pointer;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+.container {
+  text-align: center;
+  padding-top: 5rem;
+}
+
+.btn {
+  margin-left: 2rem;
+  padding: 2rem 6rem;
+  text-transform: uppercase;
+  font-size: 1.3rem;
+  color: #fff;
+  font-family: 'Roboto',
+    sans-serif;
+  font-weight: 500;
+  border-radius: 1rem;
+  letter-spacing: 0.2rem;
+
+}
+
+.btn--success {
+  margin-left: -2rem;
+  background: linear-gradient(to right, #29ffc6, #20e3b2, #0cebb3);
+  box-shadow: rgba(32, 227, 178, 0.6) 0px 20px 25px -5px,
+    rgba(32, 227, 178, 0.4) 0px 10px 10px -5px;
+}
+
+.btn--primary {
+  background: linear-gradient(to right, #b2fefa, #0ed2f7);
+  box-shadow: rgba(14, 210, 247, 0.6) 0px 20px 25px -5px,
+    rgba(14, 210, 247, 0.4) 0px 10px 10px -5px;
+}
+
+.btn--purple {
+  background: linear-gradient(to left, #dbace5, #86d1fd);
+  box-shadow: rgba(219, 172, 229, 0.719) 0px 20px 25px -5px,
+    rgba(219, 172, 229, 0.8) 0px 10px 10px -5px;
+}
+
+.btn--warning {
+  background: linear-gradient(to right, #ffcc5e, rgb(237, 143, 3));
+  box-shadow: rgba(237, 143, 3, 0.6) 0px 20px 25px -5px,
+    rgba(237, 143, 3, 0.4) 0px 10px 10px -5px;
+}
+
+.btn--danger {
+  background: linear-gradient(to right, #ffffffc9, rgb(239, 59, 54));
+  box-shadow: rgba(239, 59, 54, 0.6) 0px 20px 25px -5px,
+    rgba(239, 59, 54, 0.4) 0px 10px 10px -5px;
+}
+
+.btn--pink {
+  background: linear-gradient(to right, #f4c4f3, rgb(252, 103, 250));
+  box-shadow: rgba(252, 103, 250, 0.6) 0px 20px 25px -5px,
+    rgba(252, 103, 250, 0.4) 0px 10px 10px -5px;
+}
+
+/* Bài 2 */
+.text-gradient {
+  display: inline-block;
+  font-size: 10rem;
+  font-family: 'Roboto',
+    sans-serif;
+  font-weight: bold;
+  line-height: inherit;
+  color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
+  background-image: linear-gradient(to right, #fcb045, #ff389a)
+}
+
+.color__item {
+  display: inline-block;
+  width: 20rem;
+  height: 20rem;
+  border-radius: 1rem;
+  margin-top: 2rem;
+  margin-left: 2rem;
+  margin-bottom: 2rem;
+  transition: background-color 0.25s linear;
+}
+
+.color__item:first-child {
+  background-color: #A24BF0;
+}
+
+.color__item:first-child:hover {
+  background-color: orangered;
+}
+
+.color__item:nth-child(2) {
+  background-color: #38DBB2;
+}
+
+.color__item:nth-child(3) {
+  background-color: #25C2E3;
+}
+
+.color__item:nth-child(4) {
+  background-color: #E3344F;
+}
+
+.color__item:nth-child(5) {
+  background-color: #DD44A7;
+}
+
+.color__item:nth-child(6) {
+  background-color: #F7AC2A;
+}
+
+.color__item:nth-child(7) {
+  background-color: #000;
+}
+
+.color__item:nth-child(8) {
+  background-color: #555;
+}
+
+.color__item:nth-last-child(4) {
+  background-color: #888888;
+}
+
+.color__item:nth-last-child(3) {
+  background-color: #D2D2D2;
+}
+
+.color__item:nth-last-child(2) {
+  background-color: #E8E8E8;
+}
+
+.color__item:last-child {
+  background-color: #FCFCFC;
+}
+
+.color__item:last-child:hover {
+  background-color: aqua;
+}
+
+/* 
+  => Tiến hành thực hiện: 
+  - Dùng kiến thức về Selectors để chọn ra các thẻ `div` có `data-link` bắt đầu bằng https 
+  - Chọn ra các thẻ `div` có `data-link` kết thúc bằng `.vn` 
+  - Chọn ra các thẻ `div` có `data-name` có chứa chữ `hello` 
+  - Chọn ra `input` có `type` là email 
+  - Chọn ra `input` có `name` là fullname
+*/
+
+div[data-link^="https"]:hover {
+  color: red;
+  font-size: 2rem;
+  font-weight: normal;
+  line-height: inherit;
+}
+
+div[data-link$=".vn"]:hover {
+  font-size: 3rem;
+  color: greenyellow;
+  font-weight: normal;
+  line-height: inherit;
+}
+
+div[data-name*="hello"]:hover {
+  font-size: 4rem;
+  color: palevioletred;
+  font-weight: normal;
+  line-height: inherit;
+}
+
+input[type="email"] {
+  border: 1px solid red
+}
+
+input[name="fullname"] {
+  border: 1px solid aquamarine
+}
