@@ -1,0 +1,220 @@
+:root {
+  --primary-color: #3d6ef7;
+  --secondary-color: #6c757d;
+  --purple: #6f42c1;
+  --white: #fff;
+  --orange: #ff6651;
+  --red: #dc3545;
+  --pink: #e83e8c;
+  --teal: #28c997;
+  --yellow: #ffc107;
+  --green: #28a745;
+  --success: #28a745;
+  --info: #17a2b8;
+  --wraning: #ffc107;
+  --danger: #dc3545;
+  --dark: #343a40;
+  --light: #f8f9fa;
+  --greenyellow: #adff2f;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  font-style: 1.6rem;
+  font-weight: normal;
+  height: 2000px;
+  padding-top: 10rem;
+}
+
+input,
+textarea,
+select,
+button {
+  outline: none;
+}
+
+input {
+  line-height: normal;
+}
+
+label,
+button {
+  cursor: pointer;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+/* //! Transform: thay đổi vật thể nhưng không nhưng nó luôn nằm ở vị trí ban đầu */
+/*
+   Scale: scale(X,Y) | scaleX() -> theo chiều ngang | scaleY() -> theo chiều dọc
+  + Zoom ra hai bên phóng to kich thước không đẩy các phần tử khác đi
+    => Example:  Scale(2) = 10 x 10
+*/
+/*
+  + Rotate: rotate() | rotateX() | rotateY()
+  + Xoay phần tử theo chiều kim đồng hồ từ vị trí hiện tại của nó.
+    => Example:  rotate(45deg)
+*/
+/*
+  + Translate: translate(X,Y) | translateX() | translateY()
+  + Di chuyển một phần tử sang một bên hoặc lên và xuống
+    => Example:
+        + translateX(100%): di chuyển một khoảng tương ứng với độ rộng của phần tử đó
+        + translateY(100%): di chuyển một khoảng tương ứng với chiều cao của phần tử đó
+*/
+
+/*
+  + Skew: skew(deg, deg) | skewX(deg) | skewY(deg): Xoay như hình bình hành
+  + Nghiêng một phần tử sang trái hoặc phải, giống như biến hình chữ nhật thành hình bình hành.
+  + Số dương (+): thì nghiêng sang bên trái, nghiêng xuống dưới
+  + Số âm (-): thì nghiêng sang bên phải, nghiêng lên trên
+    => Example:
+        transform: skew(-30deg, -30deg);
+*/
+
+/* background-color: var(--green);
+transform: scaleX(2) scaleY(2);
+transform: scale(3);
+transform: translateX(100%) translateY(100%);
+transform: translateX(-50%) translateY(-50%);
+transform: scale(2) rotate(45deg) translate(100%, 50%);
+transform: skew(-30deg, -30deg); */
+/* .boxed {
+  width: 10rem;
+  height: 10rem;
+  margin: 5rem;
+  background-color: var(--danger);
+  transform: skewX(-30deg);
+} */
+/* //! Position: relative
+  + Muốn dịch chuyển vật thể một cách đơn giản thì có thể dùng position: relative;
+  Cùng với các thuộc tính: top, right, bottom, left để canư chỉnh vị trí của vật thể
+*/
+/* //! Position: absolute -> khi sử dụng thì thằng này không còn chiếm diện tích nữa
+  + Thuộc tính position nó sẽ chạy theo phần tử cha
+  Example: thằng cha có thuộc tính là posotion: relative thì thằng con có thuộc tính position: absolute sẽ chạy theo thằng cha và không còn chiếm khoảng trống nữa
+*/
+/* .wrap {
+  width: 100%;
+  height: 50rem;
+  background-color: var(--secondary-color);
+  position: relative;
+} */
+/*
+    Sử dụng z-index: để đè lên thằng con khác
+  */
+/* p {
+  font-size: 1.6rem;
+  color: var(--white);
+  font-weight: normal;
+  line-height: inherit;
+
+  position: relative;
+  z-index: 1;
+} */
+/* Nằm góc trên cùng bên trái màn hình
+    top: 0;
+    left: 0;
+  */
+/* Nằm góc trên cùng bên phải màn hình
+    top: 0;
+    right: 0;
+  */
+/* Nằm phía dưới góc phải màn hình
+    bottom: 0;
+    right: 0;
+  */
+/* Nằm phía dưới góc trái màn hình
+    bottom: 0;
+    left: 0;
+  */
+/* Nằm chính giữa màn hình
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  */
+/* Nằm overlay all
+    Cách 1:
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    Cách 2:
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      width: auto;
+      height: auto;
+  */
+/* Overlay theo chiều ngang
+    Cách 1:
+      top: 0;
+      left: 0;
+      right: 0;
+      width: auto;
+    Cách 2:
+      top: 0;
+      left: 0;
+      width: 100%;
+  */
+/* Overlay theo chiều dọc
+    Cách 1:
+      top: 0;
+      bottom: 0;
+      height: 100%;
+    Cách 2:
+      top: 0;
+      bottom: 0;
+      height: auto;
+  */
+/* //! Thuộc tính đi kèm với position là z-index có thể giống như là các lớp xếp chồng lên nhau, thằng nào có giá trị lớn hơn sẽ đè thằng nào có giá trị nhỏ hơn
+    Thuộc tính z-index luôn gắn liền với position: relative, nếu không gán position: relative thì thằng này sẽ không còn hiển thị
+  */
+/* .boxed {
+  width: 10rem;
+  height: 10rem;
+  background-color: var(--danger);
+  position: absolute;
+} */
+/*
+  Thuộc tính position fixed chỉ phụ thuộc vào body
+  Không nên đi kèm với thuộc tính transform -> Lỗi
+*/
+.header {
+  height: 10rem;
+  background-color: var(--greenyellow);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+.content {
+  font-size: 1.6rem;
+  color: var(--red);
+  font-weight: normal;
+  line-height: inherit;
+}
