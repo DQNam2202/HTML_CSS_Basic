@@ -68,7 +68,7 @@ img {
   font-weight: normal;
   line-height: inherit;
 } */
-body {
+/* body {
   background: linear-gradient(to right, #9cecfb, #65c7f7, #0052d4);
   width: 100%;
   height: 100vh;
@@ -98,4 +98,25 @@ body {
   font-size: 5rem;
   color: white;
   cursor: pointer;
+} */
+body {
+  background: linear-gradient(to right, #1cefff, #c0c0aa);
+  width: 100%;
+  height: 100vh;
+}
+.card {
+  position: relative;
+}
+.card-sale {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 20px;
+  background-color: red;
+  border-radius: 50%;
+  z-index: 2;
+  font-size: 1.5rem;
+  color: white;
+  font-weight: normal;
+  line-height: inherit;
 }
