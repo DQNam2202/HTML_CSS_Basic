@@ -99,12 +99,8 @@ img {
   color: white;
   cursor: pointer;
 } */
-body {
-  background: linear-gradient(to right, #1cefff, #c0c0aa);
-  width: 100%;
-  height: 100vh;
-}
-.card {
+
+/* .card {
   position: relative;
 }
 .card-sale {
@@ -119,4 +115,33 @@ body {
   color: white;
   font-weight: normal;
   line-height: inherit;
+} */
+body {
+  background: linear-gradient(to right, #1cefff, #c0c0aa);
+  width: 100%;
+  height: 100vh;
+}
+.bar {
+  width: 600px;
+  height: 1rem;
+  background-color: #eee;
+  margin: 5rem auto 0;
+  border-radius: 10px;
+  position: relative;
+}
+.bar-process {
+  width: 50%;
+  height: 100%;
+  background-color: #f62682;
+  border-radius: 10px;
+}
+.bar-circle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 30px;
+  height: 30px;
+  background-color: #f62682;
+  transform: translate(-50%, -50%);
+  border-radius: 2rem;
 }
