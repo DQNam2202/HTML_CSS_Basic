@@ -20,7 +20,6 @@
 
 html {
   box-sizing: border-box;
-  font-size: 62.5%;
 }
 
 * {
@@ -36,10 +35,8 @@ html {
 
 body {
   font-family: "Poppins", sans-serif;
-  font-style: 1.6rem;
-  font-weight: normal;
-  height: 2000px;
-  padding-top: 10rem;
+  /* height: 2000px;
+  padding-top: 10rem; */
 }
 
 input,
@@ -204,7 +201,7 @@ transform: skew(-30deg, -30deg); */
   Thuộc tính position fixed chỉ phụ thuộc vào body
   Không nên đi kèm với thuộc tính transform -> Lỗi
 */
-.header {
+/* .header {
   height: 10rem;
   background-color: var(--greenyellow);
   position: fixed;
@@ -217,4 +214,7 @@ transform: skew(-30deg, -30deg); */
   color: var(--red);
   font-weight: normal;
   line-height: inherit;
-}
+} */
+/*
+  before và after : phải đi kèm với thuộc tính content, bắt buộc phải có -> tạo lớp nền trước sau
+*/

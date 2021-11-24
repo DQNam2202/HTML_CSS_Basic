@@ -37,6 +37,10 @@ img {
   display: block;
   max-width: 100%;
 }
+body {
+  width: 100%;
+  height: 100vh;
+}
 /* body {
   background-color: white;
   width: 100%;
@@ -116,7 +120,7 @@ img {
   font-weight: normal;
   line-height: inherit;
 } */
-body {
+/* body {
   background: linear-gradient(to right, #1cefff, #c0c0aa);
   width: 100%;
   height: 100vh;
@@ -144,4 +148,110 @@ body {
   background-color: #f62682;
   transform: translate(-50%, -50%);
   border-radius: 2rem;
+} */
+.title {
+  position: relative;
+  padding-left: 2rem;
+  margin: 5rem;
+  font-size: 3rem;
+  color: black;
+  font-weight: normal;
+  line-height: inherit;
+}
+.title::before {
+  position: absolute;
+  content: "";
+  width: 1rem;
+  height: 1rem;
+  background-color: red;
+  border-radius: 1rem;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.line {
+  position: relative;
+  text-align: center;
+  font-size: 1.5rem;
+  color: #f62682;
+  font-weight: normal;
+  line-height: inherit;
+}
+.line::before {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 1px;
+  background-color: #f62682;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+.line-text {
+  display: inline-block;
+  position: relative;
+  background-color: white;
+  position: relative;
+  z-index: 1;
+  padding: 1rem;
+}
+/*
+  currentColor: Lấy màu chữ hiện tại của nó hoặc thằng cha chứa nó
+*/
+.icon {
+  position: relative;
+  width: 5rem;
+  height: 5rem;
+  color: red;
+  border-radius: 50%;
+  margin: 5rem auto;
+}
+.icon::after {
+  content: "";
+  background-color: currentColor;
+  opacity: 0.25;
+  border-radius: inherit;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.icon-clock {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 1.5rem;
+}
+.effect {
+  position: relative;
+  display: inline-block;
+  padding: 1rem 2rem;
+  background-color: white;
+  text-align: center;
+  border: 1px solid orange;
+  z-index: 1;
+  margin: 5rem;
+}
+.effect::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  /*
+    + Width set về 0 khi hover vào thì width sẽ tăng lên 100% phủ hết khung
+    + Trong trường hợp Height thì khi hover vào thì height sẽ tăng lên 100% phủ hết khung
+  */
+  width: 0;
+  height: 100%;
+  background-color: white;
+  border-radius: inherit;
+  transition: all 0.5s linear;
+  z-index: -1;
+}
+.effect:hover::before {
+  background-color: orange;
+  width: 100%;
 }
