@@ -286,7 +286,7 @@ transform: skew(-30deg, -30deg); */
     transform: translateX(20rem);
   }
 } */
-.circle {
+/* .circle {
   width: 3rem;
   height: 3rem;
   background-color: var(--pink);
@@ -317,5 +317,30 @@ transform: skew(-30deg, -30deg); */
   to {
     transform: scale(2);
     opacity: 0.25;
+  }
+} */
+.circle-loading {
+  text-align: center;
+  margin: 5rem auto;
+  animation: rotate 1s infinite;
+}
+.circle-loading .circle-item {
+  width: 3rem;
+  height: 3rem;
+  margin-left: 1rem;
+  background-color: var(--white);
+  border-radius: 50%;
+  display: inline-block;
+  border: 1px solid var(--pink);
+}
+@keyframes rotate {
+  50% {
+    transform: rotate(200deg);
+  }
+  75% {
+    transform: rotate(160deg);
+  }
+  100% {
+    transform: rotate(180deg);
   }
 }
