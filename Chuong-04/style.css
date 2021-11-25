@@ -218,3 +218,104 @@ transform: skew(-30deg, -30deg); */
 /*
   before và after : phải đi kèm với thuộc tính content, bắt buộc phải có -> tạo lớp nền trước sau
 */
+/* .boxed {
+  position: relative;
+  width: 10rem;
+  height: 10rem;
+  margin: 10rem;
+}
+.boxed-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 1.6rem;
+  color: yellow;
+  font-weight: normal;
+  line-height: inherit;
+}
+.boxed::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--danger);
+  z-index: -1;
+  transform: rotate(45deg);
+} */
+/*
+  Cách thuộc tính của content:
+    animation-name: Tên của animation cần sử dụng
+    animation-duration: Thời gian chạy animation
+    animation-direction: Hướng chạy animation
+      + alternate: chạy qua chạy lại
+      + alternate-reverse: chạy ngược lại (từ điểm kết thúc chạy ngược về lại đầu)
+      + normal: chạy theo thứ tự -> Mặc định
+    animation-iteration-count: Số lần chạy animation
+      + count: số lần chạy
+      + infinite: chạy vô tận
+      + infinite-reverse: chạy ngược vô tận
+    animation-timing-function: Hàm tính toán thời gian chạy animation
+      + Giống hàm esasing trong transition
+    animation-fill-mode:
+      + forwards: chạy tới đứng ở điểm kết thúc
+      + backwards: chạy ngược lại đứng ở điểm bắt đầu
+      => không đi kèm với thuộc tính animation-direction
+    animation-delay: sau khoảng thời gian bao lâu thì sẽ chạy aniamtion
+    -> Cách viết rút gọn animation: name, duration, fill-mode, iteration-count, direction timing-function, delay
+*/
+/* .boxed {
+  width: 10rem;
+  height: 10rem;
+  background-color: #28a745;
+  border-radius: 50%;
+  animation-name: move;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+  animation-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1);
+  animation-fill-mode: backwards;
+  animation-delay: 5s;
+}
+@keyframes move {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(20rem);
+  }
+} */
+.circle {
+  width: 3rem;
+  height: 3rem;
+  background-color: var(--pink);
+  border-radius: 50%;
+  margin: 5rem auto;
+  position: relative;
+}
+.circle::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: inherit;
+  border-radius: inherit;
+  animation-name: zoom;
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
+  animation-fill-mode: forwards;
+  animation-timing-function: linear;
+}
+@keyframes zoom {
+  from {
+    transform: scale(1);
+    opacity: 1;
+  }
+  to {
+    transform: scale(2);
+    opacity: 0.25;
+  }
+}
