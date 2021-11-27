@@ -1,0 +1,152 @@
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+html {
+  font-size: 62.5%;
+}
+a {
+  text-decoration: none;
+}
+img {
+  display: block;
+  max-width: 100%;
+}
+body {
+  font-family: "Poppins", sans-serif;
+  font-size: 16px;
+  line-height: 1;
+}
+/*
+  flex-direction: row; -> mặc đinh thì nó nằm theo chiều ngang (mặc đinh) -> căn theo chiều dọc
+  flex-direction: row-reverse; -> nằm theo chiều ngang nhưng lật ngược
+  flex-direction: column; -> nằm theo chiều dọc -> căn theo chiều ngang
+  flex-direction: column-reverse; -> nằm theo chiều dọc nhưng lật ngược
+*/
+/*
+  Trong trường hợp content trong các cột hoặc dòng quá nhiều thì chiều cao hoặc chiều rộng sẽ fill
+  Khi sử sụng flex-direction: row hoặc row-reverse
+    + align-items: stretch -> Dãn ra cho chiều cao bằng nhau căn theo nội dung (căn theo chiều dọc) => (mặc định)
+    + align-items: flex-start -> Căn đều phía trên đầu, nội dung ngắn dài nó sẽ tự thay đổi chiều cao
+    + align-items: flex-end -> Căn đều phía dưới, nội dung ngắn dài nó sẽ tự thay đổi chiều cao
+    + align-items: center -> Căn giữa, nội dung ngắn dài nó sẽ tự thay đổi chiều cao
+    + align-items: baseline -> Căn theo đích chữ dòng đầu tiên
+*/
+/*
+  Khi sử sụng flex-direction: column hoặc column-reverse
+    + align-items: stretch -> Dãn ra cho chiều rộng bằng nhau căn theo nội dung (căn theo chiều ngang) => (mặc định)
+    + align-items: flex-start -> Căn về phía bên trái, nội dung ngắn dài nó sẽ tự thay đổi chiều rộng
+    + align-items: flex-end -> Căn về phía bên phải, nội dung ngắn dài nó sẽ tự thay đổi chiều rộng
+    + align-items: center -> Căn giữa, nội dung ngắn dài nó sẽ tự thay đổi chiều rộng
+    + align-items: baseline -> Căn theo dòng chữ đầu tiên
+*/
+/*
+  Muốn căn chỉnh khối ra giữa | sang trái | sang phải -> căn theo chiều ngang (row)
+  Muốn căn chỉnh khối ra giữa | trên | dưới -> căn theo chiều dọc (column)
+    + justify-content: center -> Căn giữa
+    + justify-content: flex-start -> Căn bên trái (mặc định)
+    + justify-content: flex-end -> Căn bên phải
+    + justify-content: space-between -> Căn đều các phần tử tạo ra khoảng trống giữa các phần tử
+    + justify-content: space-around -> Căn đều giữa các phần tử tạo ra khoảng trống xung quanh -> lưu ý khi sử dụng space-around thì khoảng trống đầu cuối sẽ bẳng 1 nửa khoảng trống ở giữa
+    + justify-content: space-evenly -> Tạo ra khoảng trống đều giữa các phần tử
+*/
+/*
+  Muốn căn chỉnh khối ra giữa | trên | dưới -> căn theo chiều dọc (column)
+    + justify-content: center -> Căn giữa theo chiều cao bao ngoài
+    + justify-content: flex-start -> Nằm phía trên cùng
+    + justify-content: flex-end -> Nằm phía dưới cùng
+    + justify-content: space-between -> Nằm trên giữa dưới
+    + justify-content: space-around -> Nằm cái đầu, cái giữa, cái cuối và khoảng trống giữa -> lưu ý khi sử dụng space-around thì khoảng trống đầu cuối sẽ bẳng 1 nửa khoảng trống ở giữa
+    + justify-content: space-evenly -> Tạo ra khoảng trống đều giữa các phần tử
+*/
+/*
+  Muốn set cho từng phần tử riêng biệt thì ta sử dụng -> align-self:
+*/
+/*
+  flex-wrap: nowrap; -> mặc định không rớt xuống hàng, nếu nội dung có tràn thì nó vẫn tính toán sao cho hợp lý (mặc định)
+  flex-wrap: wrap; -> rớt xuống hàng
+  flex-flow: row wrap; -> nằm theo chiều ngang nhưng rớt xuống hàng -> viết tắc của flex-direction: row và flex-wrap: wrap
+*/
+/*
+  Sử dụng order để sắp xếp thứ tự
+  Example:
+    + gán cho toàn bộ thuộc tính là order: 0;
+    .list__item:nth-child(3) {
+    order: 3;
+    }
+    .list__item:nth-child(4) {
+      order: 2;
+    }
+    .list__item:nth-child(2) {
+      order: 1;
+    }
+*/
+.list {
+  display: flex;
+  flex-direction: column;
+  /* flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-around;
+  align-items: stretch;
+  height: 50rem; */
+  /* align-items: stretch;
+  align-items: flex-start;
+  align-items: flex-end;
+  align-items: baseline;
+  justify-content: flex-end;
+  justify-content: center;
+  justify-content: space-between;
+  justify-content: space-around;
+  justify-content: space-evenly;
+  flex-wrap: wrap; */
+}
+.list__item {
+  list-style: none;
+  padding: 1rem;
+  background-color: #ff6651;
+  margin: 5px 0px;
+  order: 0;
+}
+/* .list__item:first-child {
+  font-size: 5rem;
+  align-self: flex-start;
+}
+.list__item:last-child {
+  align-self: flex-end;
+} */
+/* .list__item:first-child {
+  align-self: flex-start;
+}
+
+.list__item:nth-child(2) {
+  align-self: center;
+}
+.list__item:last-child {
+  align-self: flex-end;
+} */
+/* .list__item:nth-child(3) {
+  order: 3;
+}
+.list__item:nth-child(4) {
+  order: 2;
+}
+.list__item:nth-child(2) {
+  order: 1;
+} */
+.layout {
+  display: flex;
+}
+.icon {
+  width: 10rem;
+  height: 10rem;
+  background-color: red;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.layout-content {
+  --value: 10rem;
+  width: calc(100% - var(--value));
+}
