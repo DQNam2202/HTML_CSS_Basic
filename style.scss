@@ -16,6 +16,12 @@ img {
   display: block;
   max-width: 100%;
 }
+body {
+  font-family: "Poppins", sans-serif;
+  font-size: 1.6rem;
+  font-weight: normal;
+  background-color: #f3faff;
+}
 /*
   Trong Sass để lưu biến ta sử dụng $
   Nested code: đoạn code trong sass lồng nhau
@@ -50,53 +56,112 @@ $primary-color: #00aefd;
     transform: translateY(-50%);
   }
 }
-body {
-  font-family: "Poppins", sans-serif;
-  font-size: 1.6rem;
-  line-height: 1;
+@mixin padding($top, $right, $bottom, $left) {
+  padding-top: $top;
+  padding-right: $right;
+  padding-bottom: $bottom;
+  padding-left: $left;
 }
-.content {
-  color: $primary-color;
+@mixin textStyle($fontSize, $color: black) {
+  font-size: $fontSize;
+  color: $color;
 }
-.header {
-  &-top {
-    &-text {
-      font-size: 1.5rem;
-      color: red;
-      font-weight: normal;
-      line-height: inherit;
-      &:hover {
-        color: blue;
-      }
-    }
+/*
+  Trong trường hợp có 3 phần tử muốn đưa phần tử nào về cuối - phía bên phải: thì sử dụng margin-left: auto
+  Lưu ý: cha sử dụng display: flex và align-item: center
+*/
+/*
+  Muốn dịch chuyển một phần tử lên trên bằng đúng với chiều cao của nó thì sử dụng tranlateY(-100%)
+*/
+.dropdown {
+  width: 40rem;
+  margin: 5rem auto 0;
+  position: relative;
+  &__select {
+    @include padding(2rem, 2.5rem, 2rem, 4rem);
+    background-color: #42a7fe;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
   }
-  &-content {
-    color: greenyellow;
-    font-size: 1.8rem;
+  &__file {
+    @include textStyle(3rem, white);
     font-weight: normal;
     line-height: inherit;
-    &:hover {
-      font-size: 3rem;
-      color: brown;
+  }
+  &__value {
+    margin-left: 3.5rem;
+    @include textStyle(1.8rem, white);
+    font-weight: normal;
+    line-height: inherit;
+  }
+  &__caret {
+    margin-left: auto;
+    @include textStyle(2rem, white);
+  }
+  &__list {
+    position: absolute;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.2s linear;
+    background-color: #f3faff;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    margin-top: 3rem;
+    border-radius: 5px;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    &::after {
+      content: "";
+      width: 2rem;
+      height: 2rem;
+      background-color: white;
+      position: absolute;
+      top: 0;
+      right: 2rem;
+      transform: translateY(-50%) rotate(45deg);
+      box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+      z-index: -1;
+    }
+    // Strick đối với drop-down menu
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 3rem;
+      transform: translateY(-100%);
+      background-color: #f3faff;
     }
   }
-}
-.boxed {
-  @include size(10rem);
-  background-color: $primary-color;
-}
-.container {
-  width: 100%;
-  height: 50rem;
-  @include background(red);
-  // display: flex;
-  // align-items: center;
-  // justify-content: center;
-  position: relative;
-  .boxing {
-    @include size(10rem);
-    @include background(green);
-    border-radius: 50%;
-    @include absoluteCenter("both");
+  &__item {
+    @include padding(2rem, 2.5rem, 2rem, 4rem);
+    display: flex;
+    align-items: center;
+    transition: all 0.2s linear;
+    color: #b3bbce;
+    cursor: pointer;
+    border-left: 3px solid transparent;
+    &:not(:last-child) {
+      border-bottom: 1px solid #eee;
+    }
+    &:hover {
+      color: #74809d;
+      border-left-color: $primary-color;
+    }
+  }
+  &__icon {
+    font-size: 2rem;
+  }
+  &__text {
+    font-size: 1.8rem;
+    margin-left: 3.5rem;
+  }
+  &:hover {
+    .dropdown__list {
+      opacity: 1;
+      visibility: visible;
+    }
   }
 }
